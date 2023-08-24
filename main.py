@@ -1,7 +1,7 @@
 import requests
 
 cookies = {
-    'PHPSESSID': 'вставить сюда',
+    'PHPSESSID': 'nbpahmh62v964avqnmb8gp1gb7',
 }
 
 headers = {
@@ -37,10 +37,11 @@ for troll in response.json()["anims"]:
     trolls.append([int("".join(c for c in troll["rnum"] if c.isdigit())), troll["rnum"], "".join(c for c in troll["gos_num"] if c.isdigit()), str(troll["lat"]), str(troll['lon'])])
 trolls.sort()
 for troll in trolls:
-    print(*troll[1:3], end=' ')
-    for model in models:
-        if str(troll[2]) in model[1]:
-            print(model[0], end='   ')
-    lat = troll[3][:2]+'.'+troll[3][2:]
-    lon = troll[4][:2]+'.'+troll[4][2:]
-    print(lat, lon, "http://www.google.com/maps/place/"+lat+","+lon)
+    if troll[1] != "К1":
+        print(*troll[1:3], end=' ')
+        for model in models:
+            if str(troll[2]) in model[1]:
+                print(model[0], end='   ')
+        lat = troll[3][:2]+'.'+troll[3][2:]
+        lon = troll[4][:2]+'.'+troll[4][2:]
+        print(lat, lon, "http://www.google.com/maps/place/"+lat+","+lon)
