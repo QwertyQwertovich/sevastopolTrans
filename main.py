@@ -1,7 +1,7 @@
 import requests
 
 cookies = {
-    'PHPSESSID': 'nbpahmh62v964avqnmb8gp1gb7',
+    'PHPSESSID': 'Вставить сюда',
 }
 
 headers = {
